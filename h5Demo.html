@@ -9,6 +9,7 @@
   <style>
     body {
       background: #000;
+      margin: 0;
     }
     #video {
       width: 100%;
@@ -48,10 +49,13 @@
     }
     return pf.toLowerCase()
   }
+  width = window.innerWidth * 9/16;
 
   if(platform() !== 'pc') {
     polyvPlayer({
       wrap: '#video',
+      width: '100%',
+      height: width,
       autoplay: true,
       vid: getQueryParam('id'),
       volume: 0.5,
